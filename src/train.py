@@ -1,3 +1,4 @@
+import os
 import mlflow
 import joblib
 
@@ -36,6 +37,8 @@ def main():
             ))
         ]
     )
+
+    os.makedirs("models", exist_ok=True)
 
     mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment("car-price-random-forest")
