@@ -94,7 +94,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download the data
-The data comes from Kaggle, but I hosted it publicly on google cloud. It can be found [here]("https://storage.googleapis.com/car-price-data/car_price_prediction_.csv").
+The data comes from Kaggle, but I hosted it publicly on google cloud. It can be found [here](https://storage.googleapis.com/car-price-data/car_price_prediction_.csv).
 
 
 ```bash
