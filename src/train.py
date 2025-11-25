@@ -49,8 +49,8 @@ def main():
         mlflow.log_param("max_depth", cfg["training"]["model"]["max_depth"])
         mlflow.log_metric("r2", r2)
 
-        joblib.dump(model, "src/models/model.pkl")
-        mlflow.log_artifact("src/models/model.pkl")
+        joblib.dump(model, "models/model.pkl")
+        mlflow.log_artifact("models/model.pkl")
 
         print(f"Model trained. R2: {r2}")
 
