@@ -1,0 +1,27 @@
+data:
+  url: "https://storage.googleapis.com/car-price-data/car_price_prediction_.csv"
+  output_dir: "data/raw"
+  output_file: "car_prices_raw.csv"
+
+preprocessing:
+  target: "Price"
+  drop_columns: ["Car ID"]
+  categorical_features:
+    - Brand
+    - Model
+    - Fuel Type
+    - Transmission
+    - Condition
+  numeric_features:
+    - Year
+    - Mileage
+
+training:
+  test_size: 0.2
+  random_state: 42
+  model:
+    n_estimators: 300
+    max_depth: 8
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8

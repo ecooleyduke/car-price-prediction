@@ -416,3 +416,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+
+# ignore data folder contents since those are downloaded programatically
+data/*
+.venv
