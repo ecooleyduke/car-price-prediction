@@ -94,7 +94,8 @@ pip install -r requirements.txt
 ```
 
 ### 3. Download the data
-The data comes from Kaggle, but I hosted it publicly on google cloud. It can be found [here]("https://storage.googleapis.com/car-price-data/car_price_prediction_.csv")
+The data comes from Kaggle, but I hosted it publicly on google cloud. It can be found [here]("https://storage.googleapis.com/car-price-data/car_price_prediction_.csv").
+
 
 ```bash
 python src/data_ingest.py
@@ -108,6 +109,7 @@ python src/train.py --config config.yaml
 
 * Trains the model and saves it in `models/`
 * Logs experiments to MLFlow (`mlruns/`)
+* Check out the MLFlow experiment runs by opening up the MLFlow server: `mlflow ui --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlruns` then opening up http://127.0.0.1:5000 in your web browser.
 
 ### 5. Run API Locally
 
