@@ -3,14 +3,20 @@ import requests
 
 API_URL = "https://car-price-api-amd-881281483784.europe-west1.run.app/predict"
 
-st.title("Car Price Predictor")
-Brand = st.text_input("Brand")
-Model = st.text_input("Model")
-Year = st.number_input("Year", 1990, 2025)
-Mileage = st.number_input("Mileage", 0)
-Fuel_Type = st.text_input("Fuel Type")
-Transmission = st.text_input("Transmission")
-Condition = st.text_input("Condition")
+# Categorical options
+BRANDS = ["Toyota", "Honda", "Suzuki", "Ford", "BMW", "Mercedes"]
+FUEL_TYPES = ["Petrol", "Diesel", "Hybrid", "Electric"]
+TRANSMISSIONS = ["Manual", "Automatic"]
+CONDITIONS = ["New", "Used", "Excellent", "Good", "Fair"]
+
+# User Inputs
+Brand = st.selectbox("Brand", BRANDS)
+Model = st.text_input("Model")  # Free text, as models vary a lot
+Year = st.number_input("Year", min_value=1990, max_value=2025, value=2020)
+Mileage = st.number_input("Mileage", min_value=0, step=1000)
+Fuel_Type = st.selectbox("Fuel Type", FUEL_TYPES)
+Transmission = st.selectbox("Transmission", TRANSMISSIONS)
+Condition = st.selectbox("Condition", CONDITIONS)
 
 if st.button("Predict"):
     payload = {
